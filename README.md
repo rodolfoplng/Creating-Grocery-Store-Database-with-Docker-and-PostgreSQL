@@ -31,7 +31,7 @@ It ships a clean schema, seed data, and example queries so anyone can spin it up
 │ ├─ erd.png  
 │ └─ (other visuals)  
 └─ docker-compose.yml  
-
+  
 
 ### What each init script does (executed alphabetically on first boot)  
   
@@ -96,7 +96,7 @@ cp .env.example .env
 docker compose up -d
 
 # 4) Connect:
-docker exec -it pg_grocery_db psql -U pguser -d grocery # - psql
+docker exec -it pg_grocery_db psql -U pguser -d grocery #psql
 # - pgAdmin (optional): http://localhost:5050  (use credentials from .env)
 ```
 
