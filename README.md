@@ -96,7 +96,7 @@ cp .env.example .env
 docker compose up -d
 
 # 4) Connect:
-# - psql:  docker exec -it pg_grocery_db psql -U pguser -d grocery
+docker exec -it pg_grocery_db psql -U pguser -d grocery # - psql
 # - pgAdmin (optional): http://localhost:5050  (use credentials from .env)
 ```
 
