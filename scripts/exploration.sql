@@ -7,8 +7,8 @@
 -- Therefore, we calculate revenue as sales.quantity * products.price.
 SELECT p.productname,
        SUM(s.quantity * p.price) AS revenue
-FROM raw.sales s
-JOIN raw.products p ON p.productid = s.productid
+FROM sales s
+JOIN products p ON p.productid = s.productid
 GROUP BY p.productname
 ORDER BY revenue DESC
 LIMIT 10;
@@ -17,8 +17,8 @@ LIMIT 10;
 -- Using TO_CHAR(DATE_TRUNC(...), 'YYYY-MM') to display months in a readable format
 SELECT TO_CHAR(DATE_TRUNC('month', s.salesdate), 'YYYY-MM') AS month,
        SUM(s.quantity * p.price) AS revenue
-FROM raw.sales s
-JOIN raw.products p ON p.productid = s.productid
+FROM sales s
+JOIN products p ON p.productid = s.productid
 GROUP BY 1
 ORDER BY 1;
 
@@ -26,9 +26,9 @@ ORDER BY 1;
 SELECT co.countryname,
        ci.cityname,
        COUNT(DISTINCT cu.customerid) AS customers
-FROM raw.customers cu
-JOIN raw.cities ci ON ci.cityid = cu.cityid
-JOIN raw.countries co ON co.countryid = ci.countryid
+FROM customers cu
+JOIN cities ci ON ci.cityid = cu.cityid
+JOIN countries co ON co.countryid = ci.countryid
 GROUP BY 1,2
 ORDER BY 1,2;
 
@@ -37,9 +37,9 @@ ORDER BY 1,2;
 SELECT e.firstname || ' ' || e.lastname AS employee,
        SUM(s.quantity * p.price) AS revenue,
        COUNT(*) AS num_sales
-FROM raw.sales s
-JOIN raw.employees e ON e.employeeid = s.salespersonid
-JOIN raw.products p ON p.productid = s.productid
+FROM sales s
+JOIN employees e ON e.employeeid = s.salespersonid
+JOIN products p ON p.productid = s.productid
 GROUP BY employee
 ORDER BY revenue DESC
 LIMIT 10;
