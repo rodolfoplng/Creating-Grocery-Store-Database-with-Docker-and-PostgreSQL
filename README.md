@@ -34,32 +34,32 @@ It ships a clean schema, seed data, and example queries so anyone can spin it up
 
 
 ### What each init script does (executed alphabetically on first boot)  
-
-**01_schema.sql**  
+  
+**01_schema.sql**
 Creates the database schema and base tables (no foreign keys yet).  
 - Connects to the target DB (e.g., `\connect grocery;`)  
 - Creates schema `raw`  
 - Defines tables such as `raw.categories`, `raw.countries`, `raw.cities`, `raw.customers`, `raw.employees`, `raw.products`, `raw.sales` with proper data types  
-
-**02_constraints.sql**  
+  
+**02_constraints.sql**
 Adds relational integrity after the tables exist.  
 - Foreign keys (e.g., `raw.sales.ProductID → raw.products.ProductID`)  
 - Optional unique constraints and check constraints (if any)  
 - Keeping constraints here (separate from schema creation) makes initial bulk loads simpler and faster  
-
-**03_indexes.sql**  
+  
+**03_indexes.sql**
 Adds performance indexes used by typical analytics queries.  
 - Example: indexes on `SalesDate`, `CustomerID`, `ProductID`, `SalesPersonID`  
 - Indexes are created **after** the initial load to speed up ingestion and keep startup simple  
-
-**04_load_data.sql**  
+  
+**04_load_data.sql**
 Bulk-loads CSVs into the tables using `\COPY`.  
 - Uses the mounted `/data/*.csv` files  
 - This repository includes **sample** `\COPY` commands and **sample-sized CSVs** to keep the repo light  
 - **Full dataset** lives on Kaggle:  
   **Grocery Sales Dataset** → [https://www.kaggle.com/datasets/andrexibiza/grocery-sales-dataset](https://www.kaggle.com/datasets/andrexibiza/grocery-sales-dataset/data)  
   (Download the full CSVs and place them under `./data/` if you want to load everything.)  
-
+  
 > Note: The `init/` scripts run automatically only on the **first** container start (when the data volume is empty).  
 > If you change any file later and want to re-run, either execute scripts manually via `psql`, or reset the volume:
 > ```
@@ -105,5 +105,5 @@ docker compose up -d
 
 -- quick test query  
 SELECT COUNT(*) FROM raw.sales;
-
+  
 For more projects, check out my [Portfolio Repository](https://github.com/rodolfoplng/Portfolio).
