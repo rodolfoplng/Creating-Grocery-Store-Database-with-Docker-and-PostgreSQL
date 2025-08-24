@@ -77,7 +77,7 @@ A small set of ready-to-run SQL queries for exploration and validation:
 
 **screenshots/**  
 Visual documentation of the project:
-- `erd.png` – entity-relationship diagram of the database
+- `ERD.png` – entity-relationship diagram of the database
 - Any other charts or UI screenshots you want to showcase in your portfolio
 
 
@@ -100,10 +100,10 @@ docker compose up -d
 # - pgAdmin (optional): http://localhost:5050  (use credentials from .env)
 ```
 
--- list tables in the raw schema
+-- list tables in the raw schema  
 \dt raw.*;
 
--- quick test query
+-- quick test query  
 SELECT COUNT(*) FROM raw.sales;
 
 For more projects, check out my [Portfolio Repository](https://github.com/rodolfoplng/Portfolio).
