@@ -101,9 +101,25 @@ docker exec -it pg_grocery_db psql -U pguser -d grocery #psql
 ```
 
 -- list tables in the raw schema  
+```sql
 \dt raw.*;
+```
 
 -- quick test query  
+```sql
 SELECT COUNT(*) FROM raw.sales;
+```
+
+-- if you don't want to prefix with "raw." all the time,
+-- set the default search_path for this session:  
+```sql
+SET search_path TO raw, public;
+```
+
+-- now you can just run:  
+```sql
+\dt;
+SELECT COUNT(*) FROM sales;
+```
   
 For more projects, check out my [Portfolio Repository](https://github.com/rodolfoplng/Portfolio).
