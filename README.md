@@ -123,3 +123,6 @@ SELECT COUNT(*) FROM sales;
 ```
   
 For more projects, check out my [Portfolio Repository](https://github.com/rodolfoplng/Portfolio).
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
