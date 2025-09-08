@@ -26,6 +26,7 @@ It ships a clean schema, seed data, and example queries so anyone can spin it up
 ├─ scripts/  
 │ ├─ exploration.sql  
 │ ├─ sanity_checks.sql  
+│ ├─ data_processing.sql  
 │ └─ (other helper queries)  
 ├─ screenshots/  
 │ ├─ erd.png  
@@ -73,7 +74,8 @@ Bulk-loads CSVs into the tables using `\COPY`.
 **scripts/**  
 A small set of ready-to-run SQL queries for exploration and validation:
 - `exploration.sql`: example joins (top products by revenue, monthly trends, customers by country/city)
-- `sanity_checks.sql`: row counts by table, orphan checks before/after constraints, etc.  
+- `sanity_checks.sql`: row counts by table, orphan checks before/after constraints, etc.
+- `data_processing.sql`: treat sales.totalprice column that was left NULL or 0.  
 
 **screenshots/**  
 Visual documentation of the project:
