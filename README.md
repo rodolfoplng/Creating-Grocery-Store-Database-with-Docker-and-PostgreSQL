@@ -121,6 +121,12 @@ SET search_path TO raw, public;
 \dt;
 SELECT COUNT(*) FROM sales;
 ```
+
+## Versioning
+This repo is versioned via GitHub Releases/Tags.
+
+- Latest: see [Releases](../../releases)
+- Tags: `v1.0-pgadmin-8`, `v1.1-pgadmin-9`
   
 For more projects, check out my [Portfolio Repository](https://github.com/rodolfoplng/Portfolio).
 
