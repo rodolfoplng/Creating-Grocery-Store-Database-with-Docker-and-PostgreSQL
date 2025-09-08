@@ -122,13 +122,15 @@ SET search_path TO raw, public;
 SELECT COUNT(*) FROM sales;
 ```
 
-## Versioning
+## Versioning  
+
 This repo is versioned via GitHub Releases/Tags.
 
 - Latest: see [Releases](../../releases)
-- Tags: `v1.0-pgadmin-8`, `v1.1-pgadmin-9`
+- Tags: `v1.0-pgadmin-8`, `v1.1-pgadmin-9`  
+
+  
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.  
   
 For more projects, check out my [Portfolio Repository](https://github.com/rodolfoplng/Portfolio).
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
