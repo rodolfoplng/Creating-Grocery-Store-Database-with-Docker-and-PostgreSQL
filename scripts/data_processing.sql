@@ -1,6 +1,6 @@
 /* 
 
-Hotfix: backfill sales.totalprice where it was left NULL or 0.
+Hotfix: backfill sales.totalprice that was left NULL or 0.
 
 This script recomputes and fills totalprice as products.price * sales.quantity (rounded to 2 decimals),
 updating only rows with NULL/0 totalprice and wrapping the change to the database.
